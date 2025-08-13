@@ -36,8 +36,28 @@ function App() {
     }
   };
 
-    return (
-    <div className={`app ${isDarkMode ? 'dark-mode' : ''}`}>
+  const handleBack = () => {
+    setSelectedChat(null);
+  };
+
+  // Determine app class based on current state for responsive behavior
+  const getAppClass = () => {
+    let appClass = `app ${isDarkMode ? 'dark-mode' : ''}`;
+    
+    // Add responsive classes for mobile
+    if (window.innerWidth <= 768) {
+      if (selectedChat) {
+        appClass += ' show-chat';
+      } else if (activeSidebarItem === 'chats') {
+        appClass += ' show-chats';
+      }
+    }
+    
+    return appClass;
+  };
+
+  return (
+    <div className={getAppClass()}>
       <Sidebar 
         activeItem={activeSidebarItem} 
         onItemClick={handleSidebarItemClick} 
@@ -55,6 +75,7 @@ function App() {
         selectedChat={selectedChat} 
         activeSidebarItem={activeSidebarItem}
         isDarkMode={isDarkMode}
+        onBack={handleBack}
       />
     </div>
   );

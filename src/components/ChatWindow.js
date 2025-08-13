@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ChatWindow.css';
 
-const ChatWindow = ({ chat, isDarkMode = false }) => {
+const ChatWindow = ({ chat, isDarkMode = false, onBack }) => {
   const [message, setMessage] = useState('');
 
   const handleSendMessage = () => {
@@ -18,9 +18,19 @@ const ChatWindow = ({ chat, isDarkMode = false }) => {
       handleSendMessage();
     }
   };
+
   return (
     <div className={`chat-window ${isDarkMode ? 'dark-mode' : ''}`}>
       <div className="chat-header-main">
+        {/* Back button for mobile */}
+        <button 
+          className="back-button" 
+          onClick={onBack}
+          title="Back to chats"
+        >
+          ←
+        </button>
+        
         <div className="chat-avatar">
           {chat.avatar}
         </div>

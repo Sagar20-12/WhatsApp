@@ -10,10 +10,10 @@ import SettingsPage from './SettingsPage';
 import ProfilePage from './ProfilePage';
 import './MainContent.css';
 
-const MainContent = ({ selectedChat, activeSidebarItem, isDarkMode = false }) => {
+const MainContent = ({ selectedChat, activeSidebarItem, isDarkMode = false, onBack }) => {
   const renderContent = () => {
     if (selectedChat) {
-      return <ChatWindow chat={selectedChat} isDarkMode={isDarkMode} />;
+      return <ChatWindow chat={selectedChat} isDarkMode={isDarkMode} onBack={onBack} />;
     }
 
     switch (activeSidebarItem) {

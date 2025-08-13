@@ -3,4 +3,130 @@
   height: 100vh;
   display: flex;
   background-color: #f0f2f5;
+  overflow: hidden;
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+  
+  /* Hide chat list and main content by default on mobile */
+  .chat-list,
+  .main-content {
+    display: none;
+  }
+  
+  /* Show only sidebar on mobile initially - moved to bottom */
+  .sidebar {
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 16px;
+    background-color: #ffffff;
+    border-top: 1px solid #e9edef;
+    border-bottom: none;
+    order: 2; /* Move to bottom */
+  }
+  
+  .sidebar-top,
+  .sidebar-bottom {
+    flex-direction: row;
+    gap: 16px;
+    padding: 0;
+  }
+  
+  .sidebar-icon {
+    padding: 8px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+  }
+  
+  .sidebar-icon:hover {
+    background-color: #f0f2f5;
+  }
+  
+  .sidebar-icon.active {
+    background-color: #e7f3ff;
+  }
+  
+  .sidebar-dark-mode-toggle {
+    margin: 0;
+  }
+  
+  /* Show chat list when chats section is active */
+  .app.show-chats .chat-list {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 60px);
+    order: 1; /* Keep at top */
+  }
+  
+  /* Show main content when a chat is selected */
+  .app.show-chat .main-content {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 60px);
+    order: 1; /* Keep at top */
+  }
+  
+  /* Hide chat list when showing main content */
+  .app.show-chat .chat-list {
+    display: none;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sidebar {
+    width: 80px;
+    order: 1; /* Keep on left */
+  }
+  
+  .chat-list {
+    width: 300px;
+    order: 2;
+  }
+  
+  .main-content {
+    order: 3;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1025px) {
+  .sidebar {
+    width: 80px;
+    order: 1; /* Keep on left */
+  }
+  
+  .chat-list {
+    width: 350px;
+    order: 2;
+  }
+  
+  .main-content {
+    order: 3;
+  }
+}
+
+/* Dark mode styles */
+.app.dark-mode {
+  background-color: #111b21;
+}
+
+.app.dark-mode .sidebar {
+  background-color: #202c33;
+  border-color: #374045;
+}
+
+.app.dark-mode .chat-list {
+  background-color: #202c33;
+}
+
+.app.dark-mode .main-content {
+  background-color: #0b141a;
 }

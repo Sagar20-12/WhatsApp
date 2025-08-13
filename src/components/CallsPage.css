@@ -117,3 +117,75 @@
 .call-action-icon:hover {
   background-color: #f0f2f5;
 }
+
+/* Responsive Calls Page */
+@media (max-width: 768px) {
+  .calls-page {
+    width: 100%;
+    border-right: none;
+  }
+  
+  .calls-actions {
+    padding: 8px 12px;
+    gap: 12px;
+  }
+  
+  .calls-action-icon {
+    font-size: 16px;
+  }
+  
+  .call-item {
+    padding: 10px 12px;
+  }
+  
+  .call-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .call-name {
+    font-size: 14px;
+  }
+  
+  .call-details {
+    font-size: 12px;
+  }
+  
+  .call-action-icon {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .calls-actions {
+    padding: 6px 8px;
+    gap: 8px;
+  }
+  
+  .calls-action-icon {
+    font-size: 14px;
+  }
+  
+  .call-item {
+    padding: 8px;
+  }
+  
+  .call-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+  
+  .call-name {
+    font-size: 13px;
+  }
+  
+  .call-details {
+    font-size: 11px;
+  }
+  
+  .call-action-icon {
+    font-size: 14px;
+  }
+}
