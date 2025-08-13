@@ -39,3 +39,9 @@
 .sidebar-icon {
   position: relative;
 }
+
+.sidebar-dark-mode-toggle {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
