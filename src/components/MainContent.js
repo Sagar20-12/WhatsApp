@@ -18,21 +18,21 @@ const MainContent = ({ selectedChat, activeSidebarItem, isDarkMode = false, onBa
 
     switch (activeSidebarItem) {
       case 'calls':
-        return <CallsPage isDarkMode={isDarkMode} />;
+        return <CallsPage isDarkMode={isDarkMode} onBack={onBack} />;
       case 'videocall':
-        return <CallsPage isDarkMode={isDarkMode} />;
+        return <CallsPage isDarkMode={isDarkMode} onBack={onBack} />;
       case 'status':
-        return <StatusPage isDarkMode={isDarkMode} />;
+        return <StatusPage isDarkMode={isDarkMode} onBack={onBack} />;
       case 'channels':
-        return <ChannelsPage isDarkMode={isDarkMode} />;
+        return <ChannelsPage isDarkMode={isDarkMode} onBack={onBack} />;
       case 'starred':
-        return <StarredPage isDarkMode={isDarkMode} />;
+        return <StarredPage isDarkMode={isDarkMode} onBack={onBack} />;
       case 'archive':
-        return <ArchivePage isDarkMode={isDarkMode} />;
+        return <ArchivePage isDarkMode={isDarkMode} onBack={onBack} />;
       case 'settings':
-        return <SettingsPage isDarkMode={isDarkMode} />;
+        return <SettingsPage isDarkMode={isDarkMode} onBack={onBack} />;
       case 'profile':
-        return <ProfilePage isDarkMode={isDarkMode} />;
+        return <ProfilePage isDarkMode={isDarkMode} onBack={onBack} />;
       default:
         return <WelcomeScreen />;
     }

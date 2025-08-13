@@ -2,7 +2,7 @@ import React from 'react';
 import WhatsAppHeader from './WhatsAppHeader';
 import './CallsPage.css';
 
-const CallsPage = ({ isDarkMode = false }) => {
+const CallsPage = ({ isDarkMode = false, onBack }) => {
   const callHistory = [
     {
       id: 1,
@@ -50,10 +50,23 @@ const CallsPage = ({ isDarkMode = false }) => {
 
   return (
     <div className={`calls-page ${isDarkMode ? 'dark-mode' : ''}`}>
-      <WhatsAppHeader title="Calls" showIcons={false} isDarkMode={isDarkMode} />
-      <div className="calls-actions">
-        <span className="calls-action-icon" title="Create call link">🔗</span>
-        <span className="calls-action-icon" title="New call">📞</span>
+      <div className="calls-header">
+        {/* Back button for mobile */}
+        <button 
+          className="back-button" 
+          onClick={onBack}
+          title="Back to main"
+        >
+          ←
+        </button>
+        
+        <div className="calls-header-content">
+          <h2>Calls</h2>
+          <div className="calls-actions">
+            <span className="calls-action-icon" title="Create call link">🔗</span>
+            <span className="calls-action-icon" title="New call">📞</span>
+          </div>
+        </div>
       </div>
       
       <div className="calls-list">

@@ -4,12 +4,37 @@
   border-right: 1px solid #e9edef;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .calls-header {
   padding: 16px;
   background-color: #f0f2f5;
   border-bottom: 1px solid #e9edef;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.back-button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #54656f;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.back-button:hover {
+  background-color: #e4e6e8;
+}
+
+.calls-header-content {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,6 +44,7 @@
   font-size: 16px;
   font-weight: 600;
   color: #111b21;
+  margin: 0;
 }
 
 .calls-actions {
@@ -32,11 +58,22 @@
   cursor: pointer;
   color: #54656f;
   font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.calls-action-icon:hover {
+  background-color: #e4e6e8;
 }
 
 .calls-list {
   flex: 1;
   overflow-y: auto;
+  background-color: white;
 }
 
 .call-item {
@@ -57,13 +94,14 @@
   width: 49px;
   height: 49px;
   border-radius: 50%;
-  background-color: #dfe5e7;
+  background-color: #25D366;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #54656f;
+  color: white;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
+  flex-shrink: 0;
 }
 
 .call-content {
@@ -76,6 +114,9 @@
   font-weight: 500;
   color: #111b21;
   margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .call-details {
@@ -88,6 +129,7 @@
 
 .call-icon {
   font-size: 14px;
+  flex-shrink: 0;
 }
 
 .call-info {
@@ -101,6 +143,7 @@
 .call-actions {
   display: flex;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .call-action-icon {
@@ -112,21 +155,37 @@
   padding: 4px;
   border-radius: 4px;
   transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .call-action-icon:hover {
   background-color: #f0f2f5;
 }
 
-/* Responsive Calls Page */
+/* Mobile responsive styles */
 @media (max-width: 768px) {
   .calls-page {
     width: 100%;
     border-right: none;
+    height: calc(100vh - 60px);
+  }
+  
+  .back-button {
+    display: block;
+  }
+  
+  .calls-header {
+    padding: 12px 16px;
+    gap: 16px;
+  }
+  
+  .calls-header h2 {
+    font-size: 15px;
   }
   
   .calls-actions {
-    padding: 8px 12px;
     gap: 12px;
   }
   
@@ -135,7 +194,8 @@
   }
   
   .call-item {
-    padding: 10px 12px;
+    padding: 16px;
+    gap: 16px;
   }
   
   .call-avatar {
@@ -145,11 +205,11 @@
   }
   
   .call-name {
-    font-size: 14px;
+    font-size: 15px;
   }
   
   .call-details {
-    font-size: 12px;
+    font-size: 13px;
   }
   
   .call-action-icon {
@@ -157,35 +217,78 @@
   }
 }
 
-@media (max-width: 480px) {
-  .calls-actions {
-    padding: 6px 8px;
-    gap: 8px;
-  }
-  
-  .calls-action-icon {
-    font-size: 14px;
+/* Tablet styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .calls-page {
+    width: 300px;
   }
   
   .call-item {
-    padding: 8px;
+    padding: 14px 16px;
   }
   
   .call-avatar {
-    width: 36px;
-    height: 36px;
-    font-size: 14px;
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
   }
-  
-  .call-name {
-    font-size: 13px;
-  }
-  
-  .call-details {
-    font-size: 11px;
-  }
-  
-  .call-action-icon {
-    font-size: 14px;
-  }
+}
+
+/* Dark mode styles */
+.dark-mode.calls-page {
+  background-color: #202c33;
+  border-color: #374045;
+}
+
+.dark-mode .calls-header {
+  background-color: #202c33;
+  border-color: #374045;
+}
+
+.dark-mode .back-button {
+  color: #8696a0;
+}
+
+.dark-mode .back-button:hover {
+  background-color: #374045;
+}
+
+.dark-mode .calls-header h2 {
+  color: #e9edef;
+}
+
+.dark-mode .calls-action-icon {
+  color: #8696a0;
+}
+
+.dark-mode .calls-action-icon:hover {
+  background-color: #374045;
+}
+
+.dark-mode .calls-list {
+  background-color: #202c33;
+}
+
+.dark-mode .call-item {
+  border-color: #374045;
+}
+
+.dark-mode .call-item:hover {
+  background-color: #374045;
+}
+
+.dark-mode .call-name {
+  color: #e9edef;
+}
+
+.dark-mode .call-details {
+  color: #8696a0;
+}
+
+.dark-mode .call-action-icon {
+  color: #8696a0;
+}
+
+.dark-mode .call-action-icon:hover {
+  background-color: #374045;
 }

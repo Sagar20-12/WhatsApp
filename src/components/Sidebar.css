@@ -7,6 +7,7 @@
   border-right: 1px solid #e9edef;
   width: 80px;
   min-width: 80px;
+  order: 1; /* Default to left side for desktop */
 }
 
 .sidebar-top {
@@ -82,7 +83,7 @@
     border-right: none;
     border-top: 1px solid #e9edef;
     min-width: auto;
-    order: 2; /* Ensure it stays at bottom */
+    order: 2; /* Move to bottom on mobile */
   }
   
   .sidebar-top,
@@ -115,11 +116,20 @@
 @media (min-width: 769px) and (max-width: 1024px) {
   .sidebar {
     width: 80px;
+    order: 1; /* Keep on left */
   }
   
   .sidebar-icon {
     width: 44px;
     height: 44px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1025px) {
+  .sidebar {
+    width: 80px;
+    order: 1; /* Keep on left */
   }
 }
 

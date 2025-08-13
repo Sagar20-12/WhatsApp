@@ -37,7 +37,13 @@ function App() {
   };
 
   const handleBack = () => {
-    setSelectedChat(null);
+    if (selectedChat) {
+      // If in a chat, go back to chat list
+      setSelectedChat(null);
+    } else if (activeSidebarItem !== 'chats') {
+      // If in another section (calls, status, etc.), go back to chats
+      setActiveSidebarItem('chats');
+    }
   };
 
   // Determine app class based on current state for responsive behavior
@@ -50,6 +56,9 @@ function App() {
         appClass += ' show-chat';
       } else if (activeSidebarItem === 'chats') {
         appClass += ' show-chats';
+      } else {
+        // Show main content for other sidebar items (calls, status, etc.)
+        appClass += ' show-main';
       }
     }
     

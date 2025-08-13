@@ -73,8 +73,17 @@
     order: 1; /* Keep at top */
   }
   
+  /* Show main content for other sidebar items (calls, status, etc.) */
+  .app.show-main .main-content {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 60px);
+    order: 1; /* Keep at top */
+  }
+  
   /* Hide chat list when showing main content */
-  .app.show-chat .chat-list {
+  .app.show-chat .chat-list,
+  .app.show-main .chat-list {
     display: none;
   }
 }
