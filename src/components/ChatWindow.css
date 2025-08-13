@@ -1,0 +1,143 @@
+/* ChatWindow specific styles */
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #efeae2;
+}
+
+.chat-header-main {
+  padding: 10px 16px;
+  background-color: #f0f2f5;
+  border-bottom: 1px solid #e9edef;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+
+.chat-info {
+  flex: 1;
+}
+
+.chat-status-text {
+  font-size: 13px;
+  color: #667781;
+}
+
+.chat-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.chat-action-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #54656f;
+  font-size: 18px;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.message {
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message.sent {
+  align-items: flex-end;
+}
+
+.message.received {
+  align-items: flex-start;
+}
+
+.message-bubble {
+  max-width: 65%;
+  padding: 6px 7px 8px 9px;
+  border-radius: 7.5px;
+  font-size: 14px;
+  line-height: 19px;
+  word-wrap: break-word;
+}
+
+.message.sent .message-bubble {
+  background-color: #d9fdd3;
+  color: #111b21;
+}
+
+.message.received .message-bubble {
+  background-color: white;
+  color: #111b21;
+}
+
+.message-time {
+  font-size: 11px;
+  color: #667781;
+  margin-top: 4px;
+  margin-left: 8px;
+}
+
+.message.sent .message-time {
+  text-align: right;
+}
+
+/* Message Input Dock */
+.message-input-dock {
+  padding: 10px 16px;
+  background-color: #f0f2f5;
+  border-top: 1px solid #e9edef;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 8px 12px;
+  border: 1px solid #e9edef;
+}
+
+.input-icon {
+  cursor: pointer;
+  font-size: 20px;
+  color: #8696a0;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.input-icon:hover {
+  background-color: #f0f2f5;
+}
+
+.message-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  color: #111b21;
+  background: transparent;
+  padding: 4px 0;
+}
+
+.message-input::placeholder {
+  color: #8696a0;
+}
+
+.no-messages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #667781;
+  font-size: 14px;
+}

@@ -1,0 +1,47 @@
+/* WelcomeScreen specific styles */
+.welcome-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #667781;
+}
+
+.welcome-icon {
+  width: 250px;
+  height: 250px;
+  color: #8696a0;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-title {
+  font-size: 32px;
+  font-weight: 300;
+  color: #41525d;
+  margin-bottom: 16px;
+}
+
+.welcome-description {
+  font-size: 14px;
+  line-height: 20px;
+  max-width: 560px;
+  margin-bottom: 32px;
+}
+
+.security-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #8696a0;
+}
+
+.security-icon {
+  width: 16px;
+  height: 16px;
+}

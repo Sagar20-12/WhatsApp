@@ -1,0 +1,87 @@
+.channels-page {
+  width: 400px;
+  background-color: white;
+  border-right: 1px solid #e9edef;
+  display: flex;
+  flex-direction: column;
+}
+
+.channels-header {
+  padding: 16px;
+  background-color: #f0f2f5;
+  border-bottom: 1px solid #e9edef;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.channels-header h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111b21;
+}
+
+.channels-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.channels-action-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #54656f;
+  font-size: 18px;
+}
+
+.channels-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.channels-section {
+  padding: 16px;
+  border-bottom: 1px solid #f0f2f5;
+}
+
+.channels-section-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #00a884;
+  margin-bottom: 12px;
+}
+
+.channel-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.channel-avatar {
+  width: 49px;
+  height: 49px;
+  border-radius: 8px;
+  background-color: #dfe5e7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.channel-info {
+  flex: 1;
+}
+
+.channel-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #111b21;
+  margin-bottom: 4px;
+}
+
+.channel-description {
+  font-size: 14px;
+  color: #667781;
+}

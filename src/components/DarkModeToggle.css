@@ -1,0 +1,68 @@
+/* Dark Mode Toggle Styles */
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 8px;
+  border-radius: 16px;
+  background-color: #f0f2f5;
+  border: 1px solid #e9edef;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.dark-mode-toggle.dark {
+  background-color: #2a3942;
+  border-color: #374045;
+}
+
+.toggle-icon {
+  font-size: 12px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.3s;
+  border-radius: 20px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+  background-color: #25D366;
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(20px);
+}

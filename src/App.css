@@ -1,0 +1,6 @@
+/* App-specific styles */
+.app {
+  height: 100vh;
+  display: flex;
+  background-color: #f0f2f5;
+}

@@ -1,0 +1,7 @@
+/* MainContent specific styles */
+.main-content {
+  flex: 1;
+  background-color: #efeae2;
+  display: flex;
+  flex-direction: column;
+}

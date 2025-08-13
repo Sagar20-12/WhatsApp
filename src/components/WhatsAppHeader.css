@@ -1,0 +1,65 @@
+/* WhatsApp Header Styles */
+.whatsapp-header {
+  padding: 16px;
+  background-color: #f0f2f5;
+  border-bottom: 1px solid #e9edef;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.whatsapp-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.whatsapp-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #25D366;
+  line-height: 1;
+}
+
+.whatsapp-header h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111b21;
+  margin: 0;
+}
+
+.whatsapp-header-icons {
+  display: flex;
+  gap: 16px;
+}
+
+.whatsapp-header-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #54656f;
+  font-size: 18px;
+  transition: color 0.2s;
+}
+
+.whatsapp-header-icon:hover {
+  color: #25D366;
+}
+
+/* Dark Mode Styles for WhatsApp Header */
+.dark-mode.whatsapp-header {
+  background-color: #202c33;
+  border-bottom-color: #374045;
+}
+
+.dark-mode .whatsapp-header h2 {
+  color: #e9edef;
+}
+
+.dark-mode .whatsapp-header-icon {
+  color: #8696a0;
+}
+
+.dark-mode .whatsapp-header-icon:hover {
+  color: #25D366;
+}
